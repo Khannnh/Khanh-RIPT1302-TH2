@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đào tạo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-J4yYwvMvL9bvySdX9FhxfCF6zgFeBhRlLxFeXBr1/3BQ4JX90w9S++n0H6BDf7ZrJa4+3J/5+S6O5f3+gydQAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        #main-table {
+            width: 100%;
+            border-collapse:collapse;
+            height:500px;
+        }
+        #left-table {
+            border: none;
+            width:300px; 
+            height:500px;
+        }
+        th, td {
+            border: 1px solid rgb(247, 247, 247);  
+            padding: 8px;   
+        }
+        .left-column {
+            vertical-align: top;
+            width:320px;       
+        }
+        .gray-row {
+            background-color: #07559e;
+            color:whitesmoke;
+        }
+        .gray-row:hover{
+            background-color: rgb(76, 0, 255);
+        }
+        .Trangchu{
+            background-color:#033666 ;
+            color:whitesmoke;
+        }
+        #dong1{
+            font-size:30px;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-left: 15px;
+        }
+        #dong2{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgba(145, 211, 255, 0.212);
+            height:25px;
+            padding-left: 20px;
+        }
+        #dong3{
+            height:25px;
+            padding-top: 40px;
+            padding-left: 20px;
+        }
+        #dong4-1{
+            background-color: rgba(59, 149, 223, 0.651);
+            text-align: right;
+            color:whitesmoke;
+            font-size:larger;
+        }
+        #dong4-2,#dong5-3{
+            background-color: rgba(228, 66, 66, 0.651);
+            text-align: right;
+            color:whitesmoke;
+            font-size:larger;
+        }
+        #dong4-3,#dong5-2{
+            background-color: rgba(40, 185, 166, 0.856);
+            text-align: right;
+            color:whitesmoke;
+            font-size:larger;
+        }
+        #dong4-4,#dong5-1,#dong5-4{
+            background-color: rgb(137, 65, 146);
+            text-align: right;
+            color:whitesmoke;
+            font-size:larger;
+        }
+
+    </style>
+</head>
+<body>
+    <table id="main-table">
+        <tr>
+            <td rowspan="5" class="left-column">
+                <!-- Nội dung 11 dòng bên trái -->
+                <table id="left-table">
+                    <tr class="Trangchu"><td><span style='font-size:30px;'><span style='font-size:30px;'>&#xf0f8;</span></span>Trang Chủ</td></tr>
+                    <tr class="gray-row"><td>Quản lý khoa</td></tr>
+                    <tr class="gray-row"><td>Quản lý chuyên ngành</td></tr>
+                    <tr class="gray-row"><td>Quản lý Hệ Đào Tạo</td></tr>
+                    <tr class="gray-row"><td>Quản lý Niên khóa</td></tr>
+                    <tr class="gray-row"><td>Quản lý lớp</td></tr>
+                    <tr class="gray-row"><td><a href="quan-ly-giao-vien.html">Quản lý giáo viên</a></td></tr>
+                    <tr class="gray-row"><td>Quản lý Hội đồng</td></tr>
+                    <tr class="gray-row"><td>Quản lý Sinh Viên</td></tr>
+                    <tr class="gray-row"><td>Danh sách đồ án</td></tr>
+                    <tr class="gray-row"><td>Quản lý</td></tr>
+                </table>
+            </td>
+            <!-- Phần bên phải với 4 dòng chứa các phần tử nhỏ hơn -->
+            <td id="dong1" colspan="4">Quản lý đồ án tốt nghiệp</td>
+        </tr>
+        <tr>
+            <td id="dong2" colspan="4">Đăng nhập thành công</td>
+        </tr>
+        <tr>
+            <td id="dong3" colspan="4">Thống kê</td>
+        </tr>
+        <tr>
+            <td id="dong4-1"><p>27</p><p>Tổng số sinh viên</p>Xem</td>
+            <td id="dong4-2"><p>28</p><p>Tổng số lớp</p>Xem</td>
+            <td id="dong4-3"><p>4</p><p>Tổng số khoa</p>Xem</td>
+            <td id="dong4-4"><p>11</p><p>Tổng số chuyên ngành</p>Xem</td>
+        </tr>
+        <tr>
+            <td id="dong5-1"><p>11</p><p>Tổng số đồ án</p>Xem</td>
+            <td id="dong5-2"><p>10</p><p>Sinh viên đạt</p>Xem</td>
+            <td id="dong5-3"><p>1</p><p>Sinh viên chưa đạt</p>Xem</td>
+            <td id="dong5-4"><p>23</p><p>Tổng số giáo viên</p>Xem</td>
+        </tr>
+    </table>
+</body>
+</html>
