@@ -10,14 +10,30 @@
         body {
             font-family: Arial, sans-serif;
         }
-
         #chart-container {
-            width: 50%;
+            width: 66%;
+            height:50%;
             margin: auto;
             text-align: center;
-            padding: 20px;
-            border: 1px solid #ccc;
+            padding: 30px;
+            border: 1px solid #cccbcb;
             margin-bottom: 20px;
+        }
+        h1{
+            text-align: center;
+        }
+        .mota{
+            color:rgb(108, 106, 233);
+            font-weight: 550;
+        }
+        .use{
+            text-align:left;
+            font-size: larger;
+            color:rgb(255, 123, 75);
+            font-style: italic;
+        }
+        .sudung{
+            text-align: left;
         }
 
     </style>
@@ -27,16 +43,57 @@
 
     <div id="chart-container">
         <h2>Bar Chart</h2>
+        <p class="mota">Mô tả: Bar Chart dùng để biểu diễn các dữ liệu với các cột dọc hoặc ngang, mỗi cột tương ứng với một loại dữ liệu.</p>
         <canvas id="barChart"></canvas>
-        <p>Mô tả: Bar Chart dùng để biểu diễn các dữ liệu với các cột dọc hoặc ngang, mỗi cột tương ứng với một loại dữ liệu.</p>
+        <p class="use">Khi nào nên sử dụng:<br></p>
+        <p class="sudung">- So sánh các phần của tập hợp dữ liệu lớn hơn, đánh dấu các danh mục khác nhau hoặc hiển thị thay đổi theo thời gian.<br>
+        - Có nhãn danh mục dài — nó cung cấp nhiều không gian hơn.<br>
+        - Nếu bạn muốn minh họa cả giá trị dương và âm trong tập dữ liệu.
+        </p>
+
     </div>
 
     <div id="chart-container">
         <h2>Pie Chart</h2>
+        <p class="mota">Mô tả: Pie Chart biểu thị tỷ lệ phần trăm của các phần khác nhau trong một tổng thể.</p>
         <canvas id="pieChart"></canvas>
-        <p>Mô tả: Pie Chart biểu thị tỷ lệ phần trăm của các phần khác nhau trong một tổng thể.</p>
-    </div>
+        <p class="use">Khi nào nên sử dụng:<br></p>
+        <p class="sudung">- Khi bạn hiển thị tỷ lệ và tỷ lệ phần trăm tương đối của toàn bộ tập dữ liệu.<br>
+            - Sử dụng tốt nhất với tập dữ liệu nhỏ — cũng áp dụng cho biểu đồ vành khuyên<br>
+            - Khi dữ liệu của bạn là danh nghĩa và không theo thứ tự.
+            - Khi so sánh ảnh hưởng của MỘT nhân tố đối với các danh mục khác nhau.
+            </p>
 
+
+        
+    </div>
+    <div id="chart-container">
+        <h2>Line Chart</h2>
+        <p class="mota">Mô tả: Line Chart dùng để biểu diễn sự thay đổi của dữ liệu theo thời gian hoặc các giá trị liên tục khác.</p>
+        <canvas id="lineChart"></canvas>
+        <p class="use">Khi nào nên sử dụng:<br></p>
+            <p class='sudung'>- Nếu bạn muốn hiển thị nhiều sê-ri cho cùng một dòng thời gian.<br>
+- Nếu bạn muốn trực quan hóa các xu hướng thay vì các giá trị chính xác.<br></p>
+
+    </div>
+    <div id="chart-container">
+        <h2>Bubble Chart</h2>
+        <p class="mota">Mô tả: Bubble Chart dùng để biểu diễn dữ liệu bằng các hình tròn có kích thước khác nhau, thường được sử dụng để so sánh ba thông số trong một biểu đồ.</p>
+        <canvas id="bubbleChart"></canvas>
+        <p class="use">Khi nào nên sử dụng:<br></p>
+            <p class="sudung">- Nếu bạn muốn so sánh các giá trị độc lập.<br>
+- Nếu bạn muốn hiển thị phân phối hoặc quan hệ.<br></p>
+
+    </div>
+    <div id="chart-container">
+        <h2>Combined Chart</h2>
+        <p class="mota">Mô tả: Combined Chart là sự kết hợp của nhiều loại biểu đồ như Bar, Line và Bubble trong cùng một biểu đồ.</p>
+        <canvas id="combinedChart"></canvas>
+        <p class="use">Khi nào nên sử dụng:<br></p>
+            <p class="sudung">- Nếu bạn muốn so sánh các giá trị với các phép đo khác nhau.<br>
+            - Nếu các giá trị khác nhau trong phạm vi.<br></p>
+    </div>
+ 
     <!-- Thêm các biểu đồ khác tương tự -->
 
     <script>
@@ -94,8 +151,91 @@
             }]
         }
     });
+    // Khởi tạo Line Chart
+    var ctxLine = document.getElementById('lineChart').getContext('2d');
+    var lineChart = new Chart(ctxLine, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                borderColor: 'rgb(75, 192, 192)',
+                tension: 0.1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+        // Khởi tạo Bubble Chart
+    var ctxBubble = document.getElementById('bubbleChart').getContext('2d');
+    var bubbleChart = new Chart(ctxBubble, {
+        type: 'bubble',
+        data: {
+            datasets: [{
+                label: 'First Dataset',
+                data: [
+                    { x: 20, y: 30, r: 15 },
+                    { x: 40, y: 10, r: 10 },
+                    { x: 30, y: 20, r: 20 },
+                ],
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+        // Khởi tạo Combined Chart
+    var ctxCombined = document.getElementById('combinedChart').getContext('2d');
+    var combinedChart = new Chart(ctxCombined, {
+        type: 'bar',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'Bar Dataset',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                backgroundColor: 'rgba(255, 99, 132, 0.6)',
+                borderColor: 'rgba(255, 99, 132, 1)',
+            }, {
+                label: 'Line Dataset',
+                data: [30, 35, 40, 45, 50, 55, 60],
+                type: 'line',
+                fill: false,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                tension: 0.1
+            }, {
+                label: 'Bubble Dataset',
+                data: [
+                    { x: 20, y: 30, r: 15 },
+                    { x: 40, y: 10, r: 10 },
+                    { x: 30, y: 20, r: 20 },
+                ],
+                type: 'bubble',
+                backgroundColor: 'rgba(75, 192, 192, 0.6)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 });
-
     </script>
 </body>
 </html>
