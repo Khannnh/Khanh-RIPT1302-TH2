@@ -14,7 +14,7 @@
         #left-table {
             border: none;
             width:300px; 
-            height:500px;
+            height:780px;
         }
         th, td {
             border: 1px solid rgb(247, 247, 247);  
@@ -29,7 +29,7 @@
             color:whitesmoke;
         }
         .gray-row:hover{
-            background-color: rgb(76, 0, 255);
+            background-color: rgb(76, 163, 112);
         }
         .Trangchu{
             background-color:#033666 ;
@@ -39,17 +39,20 @@
             font-size:30px;
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding-left: 15px;
+            color:rgb(167, 161, 161)
         }
         #dong2{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: rgba(145, 211, 255, 0.212);
             height:25px;
             padding-left: 20px;
+            color:rgb(63, 60, 60)
         }
         #dong3{
             height:25px;
             padding-top: 40px;
             padding-left: 20px;
+            color:rgb(99, 91, 91)
         }
         #dong4-1{
             background-color: rgba(59, 149, 223, 0.651);
@@ -75,13 +78,23 @@
             color:whitesmoke;
             font-size:larger;
         }
+        .so{
+            font-size: 50px;
+        }
+        .text{
+            font-size: 26px;
+        }
+        .xem{
+            text-align: left;
+            background-color: rgb(151, 85, 85);
+        }
 
     </style>
 </head>
 <body>
     <table id="main-table">
         <tr>
-            <td rowspan="5" class="left-column">
+            <td rowspan="6" class="left-column">
                 <!-- Nội dung 11 dòng bên trái -->
                 <table id="left-table">
                     <tr class="Trangchu"><td><span style='font-size:30px;'><span style='font-size:30px;'>&#xf0f8;</span></span>Trang Chủ</td></tr>
@@ -90,7 +103,7 @@
                     <tr class="gray-row"><td>Quản lý Hệ Đào Tạo</td></tr>
                     <tr class="gray-row"><td>Quản lý Niên khóa</td></tr>
                     <tr class="gray-row"><td>Quản lý lớp</td></tr>
-                    <tr class="gray-row"><td><a href="quan-ly-giao-vien.html">Quản lý giáo viên</a></td></tr>
+                    <tr class="gray-row"><td>Quản lý Giáo Viên</a></td></tr>
                     <tr class="gray-row"><td>Quản lý Hội đồng</td></tr>
                     <tr class="gray-row"><td>Quản lý Sinh Viên</td></tr>
                     <tr class="gray-row"><td>Danh sách đồ án</td></tr>
@@ -107,16 +120,16 @@
             <td id="dong3" colspan="4">Thống kê</td>
         </tr>
         <tr>
-            <td id="dong4-1"><p>27</p><p>Tổng số sinh viên</p>Xem</td>
-            <td id="dong4-2"><p>28</p><p>Tổng số lớp</p>Xem</td>
-            <td id="dong4-3"><p>4</p><p>Tổng số khoa</p>Xem</td>
-            <td id="dong4-4"><p>11</p><p>Tổng số chuyên ngành</p>Xem</td>
+            <td id="dong4-1"><p class="so">27</p><p class="text">Tổng số sinh viên</p><p class="xem">Xem</p></td>
+            <td id="dong4-2"><p class="so">28</p><p class="text">Tổng số lớp</p><p class="xem">Xem</p></td>
+            <td id="dong4-3"><p class="so">4</p><p class="text">Tổng số khoa</p><p class="xem">Xem</p></td>
+            <td id="dong4-4"><p class="so">11</p><p class="text">Tổng số chuyên ngành</p><p class="xem">Xem</p></td>
         </tr>
         <tr>
-            <td id="dong5-1"><p>11</p><p>Tổng số đồ án</p>Xem</td>
-            <td id="dong5-2"><p>10</p><p>Sinh viên đạt</p>Xem</td>
-            <td id="dong5-3"><p>1</p><p>Sinh viên chưa đạt</p>Xem</td>
-            <td id="dong5-4"><p>23</p><p>Tổng số giáo viên</p>Xem</td>
+            <td id="dong5-1"><p class="so">11</p><p class="text">Tổng số đồ án</p><p class="xem">Xem</p></td>
+            <td id="dong5-2"><p class="so">10</p><p class="text">Sinh viên đạt</p><p class="xem">Xem</p></td>
+            <td id="dong5-3"><p class="so">1</p><p class="text">Sinh viên chưa đạt</p><p class="xem">Xem</p></td>
+            <td id="dong5-4"><p class="so">23</p><p class="text">Tổng số giáo viên</p><p class="xem">Xem</p></td>
         </tr>
     </table>
 </body>
