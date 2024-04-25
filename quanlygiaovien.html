@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản lý Giáo Viên</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
     <style>
         #main-table {
             width: 100%;
@@ -13,7 +15,7 @@
         #left-table {
             border: none;
             width:300px; 
-            height:500px;
+            height:780px;
         }
         th, td {
             border: 1px white; 
@@ -29,7 +31,7 @@
             color:whitesmoke;
         }
         .gray-row:hover{
-            background-color: rgb(76, 0, 255);
+            background-color:  rgb(76, 163, 112);
         }
         .Trangchu{
             background-color:#033666 ;
@@ -39,7 +41,7 @@
             color:rgb(134, 134, 134);
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding-left: 15px;
-            background-color: rgb(202, 202, 202);
+            background-color: rgb(240, 232, 232);
         }
         #dong2{
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -49,7 +51,7 @@
         #dong3{
             height:25px;
             padding-left: 20px;
-            background-color: rgb(82, 197, 226);
+            background-color: rgba(30, 167, 172, 0.87);
             color:whitesmoke;
         }
         #dong4-1{
@@ -65,7 +67,7 @@
             font-size:larger;
         }
         #dong4-3,#dong5-2{
-            background-color: rgba(88, 221, 203, 0.856);
+            background-color: rgba(14, 177, 150, 0.925);
             text-align: right;
             color:whitesmoke;
             font-size:larger;
@@ -76,6 +78,10 @@
             color:whitesmoke;
             font-size:larger;
         }
+        .button{
+            font-size: 22px;
+            background-color: rgba(21, 224, 190, 0.678);
+        }
 
     </style>
 </head>
@@ -85,13 +91,13 @@
             <td rowspan="5" class="left-column">
                 <!-- Nội dung 11 dòng bên trái -->
                 <table id="left-table">
-                    <tr class="Trangchu"><td>Trang Chủ</td></tr>
+                    <tr class="Trangchu"><td><i class="fas fa-home"></i>&nbsp;Trang Chủ</td></tr>
                     <tr class="gray-row"><td>Quản lý khoa</td></tr>
                     <tr class="gray-row"><td>Quản lý chuyên ngành</td></tr>
                     <tr class="gray-row"><td>Quản lý Hệ Đào Tạo</td></tr>
                     <tr class="gray-row"><td>Quản lý Niên khóa</td></tr>
                     <tr class="gray-row"><td>Quản lý lớp</td></tr>
-                    <tr class="gray-row"><td><a href="quanlygiaovien.html">Quản lý Giáo Viên</a></td></tr>
+                    <tr class="gray-row"><td>Quản lý Giáo Viên</a></td></tr>
                     <tr class="gray-row"><td>Quản lý Hội đồng</td></tr>
                     <tr class="gray-row"><td>Quản lý Sinh Viên</td></tr>
                     <tr class="gray-row"><td>Danh sách đồ án</td></tr>
@@ -100,7 +106,7 @@
                 </table>
             </td>
             <!-- Phần bên phải với 4 dòng chứa các phần tử nhỏ hơn -->
-            <td id="dong1" colspan="5"><span style='font-size:30px;'><span style='font-size:30px;'>&#xf0f8;</span>   >  Giáo viên   ></td>
+            <td id="dong1" colspan="6"><i class="fas fa-home"></i>  >  Giáo viên >&nbsp;&nbsp;&nbsp;<button class="button">+ Thêm mới</button></td>
         </tr>
         <tr>
             <td id="dong2" colspan="1"><label>Chọn khoa: <br>
@@ -109,29 +115,31 @@
                     <option>Đa phương tiện </option>
                     <option>Điện tử viễn thông</option>
                 </select>
-            </label></td>
+            </label>
+            </td>
             <td id="dong2" colspan="4"><label>Chọn chuyên ngành: <br>
                 <select size="1">
                     <option>Hệ thống thông tin</option>
                     <option>Công nghệ phần mềm </option>
                     <option>Kỹ thuật phần mềm</option>
                 </select>
-            </label></td>
+            </label>&nbsp;&nbsp;&nbsp;<button class="button"> Tìm kiếm </button>
+            &nbsp;&nbsp;&nbsp;<button style="background-color: rgb(255, 130, 99); font-size: 22px;">Làm mới </button>
+        </td>
         </tr>
         <tr>
-            <td id="dong3" colspan="4"><b>Quản lý giáo viên</b></td>
+            <td id="dong3" colspan="6"><i class="fas fa-cog"></i> <b>Quản lý giáo viên</b></td>
         </tr>
         <tr>
-            <td id="dong4-1"><p>27</p><p>Tổng số sinh viên</p>Xem</td>
-            <td id="dong4-2"><p>28</p><p>Tổng số lớp</p>Xem</td>
-            <td id="dong4-3"><p>4</p><p>Tổng số khoa</p>Xem</td>
-            <td id="dong4-4"><p>11</p><p>Tổng số chuyên ngành</p>Xem</td>
+            <td>Hình ảnh</td>
+            <td>Tên giáo viên</td>
+            <td>Thông tin</td>
+            <td>Khoa</td>
+            <td>Chuyen ngành</td>
+            <td>Thao tác</td>
         </tr>
         <tr>
-            <td id="dong5-1"><p>11</p><p>Tổng số đồ án</p>Xem</td>
-            <td id="dong5-2"><p>10</p><p>Sinh viên đạt</p>Xem</td>
-            <td id="dong5-3"><p>1</p><p>Sinh viên chưa đạt</p>Xem</td>
-            <td id="dong5-4"><p>23</p><p>Tổng số giáo viên</p>Xem</td>
+            <td><img scr="male.jpg"></td>
         </tr>
     </table>
 </body>
