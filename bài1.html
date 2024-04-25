@@ -27,7 +27,7 @@
             width:250px;       
         }
         .gray-row {
-            background-color: #07559e;
+            background-color: #132a3f;
             color:whitesmoke;
         }
         .gray-row:hover{
@@ -90,6 +90,17 @@
             text-align: left;
             background-color: rgb(151, 85, 85);
         }
+        #bth{
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: #132a3f;
+            color: whitesmoke;
+            font-size: 14px;
+            text-align: left;
+            cursor: pointer;
+            box-sizing: border-box;
+        }
 
     </style>
 </head>
@@ -105,7 +116,7 @@
                     <tr class="gray-row"><td>Quản lý Hệ Đào Tạo</td></tr>
                     <tr class="gray-row"><td>Quản lý Niên khóa</td></tr>
                     <tr class="gray-row"><td>Quản lý lớp</td></tr>
-                    <tr class="gray-row"><td>Quản lý Giáo Viên</a></td></tr>
+                    <tr class="gray-row"><td><button id="bth">Quản lý Giáo Viên</button></td></tr>
                     <tr class="gray-row"><td>Quản lý Hội đồng</td></tr>
                     <tr class="gray-row"><td>Quản lý Sinh Viên</td></tr>
                     <tr class="gray-row"><td>Danh sách đồ án</td></tr>
@@ -134,5 +145,10 @@
             <td id="dong5-4"><p class="so">23</p><p class="text">Tổng số giáo viên</p><p class="xem">Xem</p></td>
         </tr>
     </table>
+    <script>
+        document.getElementById("bth").addEventListener("click",function(){
+            window.location.href="quanlygiaovien.html"
+        })
+    </script>
 </body>
 </html>

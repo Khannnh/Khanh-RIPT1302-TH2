@@ -27,7 +27,7 @@
             width:320px;     
         }
         .gray-row {
-            background-color: #07559e;
+            background-color: #1c2e3f;
             color:whitesmoke;
         }
         .gray-row:hover{
@@ -150,8 +150,8 @@
             </td>
             <td>Công nghệ thông tin</td>
             <td>Hệ thống thông tin</td>
-            <td><button style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
-            <button style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
+            <td><button class="xoa" style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
+            <button class='sua' style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
             </td>
         </tr>
         <tr>
@@ -166,8 +166,8 @@
             </td>
             <td>Công nghệ thông tin</td>
             <td>Hệ thống thông tin</td>
-            <td><button style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
-            <button style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
+            <td><button class="xoa" style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
+            <button class='sua' style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
             </td>
         </tr>
         <tr>
@@ -182,8 +182,8 @@
             </td>
             <td>Công nghệ thông tin</td>
             <td>Hệ thống thông tin</td>
-            <td><button style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
-            <button style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
+            <td><button class="xoa" style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
+            <button class='sua' style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
             </td>
         </tr>
         <tr>
@@ -198,10 +198,58 @@
             </td>
             <td>Công nghệ thông tin</td>
             <td>Hệ thống thông tin</td>
-            <td><button style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
-            <button style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
+            <td><button class="xoa" style="background-color: rgb(243, 100, 100);"><i class="fas fa-trash-alt"></i></button>
+            <button class='sua' style="background-color:rgb(67, 214, 214)"><i class="fas fa-edit"></i></button>
             </td>
         </tr>
     </table>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy tất cả các nút "xóa"
+            var deleteButtons = document.querySelectorAll(".xoa");
+
+            // Lặp qua từng nút "xóa" và thêm sự kiện click
+            deleteButtons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    // Lấy tham chiếu đến dòng chứa nút "xóa"
+                    var row = button.closest("tr");
+                    
+                    // Lấy tất cả các thẻ td trong dòng
+                    var tds = row.querySelectorAll("td");
+                    
+                    // Xóa nội dung trong từng thẻ td
+                    tds.forEach(function(td) {
+                        td.innerHTML = "";
+                    });
+                });
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy tất cả các nút "sửa"
+            var editButtons = document.querySelectorAll(".sua");
+
+            // Lặp qua từng nút "sửa" và thêm sự kiện click
+            editButtons.forEach(function(button) {
+                button.addEventListener("click", function() {
+                    // Lấy tham chiếu đến dòng chứa nút "sửa"
+                    var row = button.closest("tr");
+                    
+                    // Lấy tất cả các ô trong dòng (trừ ô chứa nút "sửa")
+                    var cells = row.querySelectorAll("td:not(.sua)");
+
+                    // Lặp qua từng ô và cho phép chỉnh sửa nội dung
+                    cells.forEach(function(cell) {
+                        var currentText = cell.innerText.trim();
+                        var newText = prompt("Nhập thông tin mới:", currentText);
+                        if (newText !== null) {
+                            cell.innerText = newText;
+                        }
+                    });
+                });
+            });
+        });
+
+    </script>
 </body>
 </html>
